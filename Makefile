@@ -87,7 +87,8 @@ export TEST_DATABASE_PASSWORD
 export TEST_DATABASE_NAME
 
 # Packages lists
-TE_PACKAGES=$(shell go list ./...)
+# TE_PACKAGES=$(shell go list ./...)
+TE_PACKAGES=github.com/mattermost/mattermost-server/cmd/mattermost/commands
 TE_PACKAGES_COMMA=$(shell echo $(TE_PACKAGES) | tr ' ' ',')
 
 # Plugins Packages

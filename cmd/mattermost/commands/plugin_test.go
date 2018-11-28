@@ -1,6 +1,7 @@
 package commands
 
 import (
+	"fmt"
 	"io"
 	"io/ioutil"
 	"os"
@@ -39,6 +40,9 @@ func cloneDefaultConfig() (string, error) {
 }
 
 func TestPlugin(t *testing.T) {
+	wd, _ := os.Getwd()
+	fmt.Println("CURRENT DIR: " + wd)
+
 	configFilePath, err := cloneDefaultConfig()
 	require.Nil(t, err)
 	defer os.Remove(configFilePath)
